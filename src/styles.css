@@ -162,6 +162,10 @@ img {
   display: block;
 }
 
-.open-soure-link{
+#open-source-link{
+   display: block;
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: x-small;
 }
