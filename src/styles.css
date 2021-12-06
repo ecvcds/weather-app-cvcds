@@ -1,0 +1,163 @@
+div.form {
+  display: block;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#current-location-text{
+  text-transform:capitalize;
+}
+
+#sky-status{
+  text-transform:capitalize;
+}
+#celsius-temp-link{
+  text-decoration: none;
+  color: black;
+}
+#fahrenheit-temp-link{
+  text-decoration: none;
+  color: black;
+}
+#between-text{
+  font-size: 20px;
+  top: -50px;
+}
+.search-engine {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.search-engine-input {
+  text-align: center;
+  width: 1000px;
+}
+.today-section{
+   line-height : 30px;
+   margin-bottom: 50px;
+}
+.current-status{
+  position: relative;
+  left: 300px;
+  font-size: 100px;
+  margin: 0;
+  padding: 0px 0px 0px 0px;
+}
+.today-section .location {
+  font-weight: bold;
+  position: relative;
+  left: 75px;
+}
+.today-section .todayDate{
+  font-weight: bold;
+  position: relative;
+  left: 150px;
+  top: -20px;
+}
+.today-section .temperature-now-celsius {
+  font-weight: bold;
+  position: relative;
+  left: 125px;
+  font-size: 100px;
+  margin: 0;
+  padding: 0px 0px 0px 0px;
+}
+.today-section .temperature-now-fahrenheit {
+  font-weight: bold;
+  position: relative;
+  left: 345px;
+}
+.today-section .sky-status {
+  font-weight: bold;
+  position: relative;
+  font-size: 30px;
+  left: 175px;
+}
+
+.yellow-icon {
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 219, 47) 11.2%,
+    rgb(244, 253, 0) 100.2%
+  );
+   font-size: 50px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block
+}
+
+.blue-icon{
+  font-size: 50px;
+  background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block
+}
+
+.grey-icon{
+  font-size: 50px;
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block
+}
+.location-icon{
+  font-size: 20px;
+  background: linear-gradient(109.6deg, rgb(0, 0, 0) 11.2%, rgb(247, 30, 30) 100.3%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block
+}
+
+.centered-row{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    
+}
+
+.card {
+    opacity: 0.6;
+}
+.card:hover{
+    opacity: 1;
+}
+
+.forecast-day{
+    font-family: 'Fruktur', cursive;
+    font-family: 'Irish Grover', cursive;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+}
+
+.card-text{
+    text-align: justify;
+}
+
+.today-section-info{
+    text-align: justify;
+    line-height : 30px;
+    left: 115px;
+    position: relative;
+    margin:0;
+}
+
+img {
+  width:500px;
+  display: block;
+}
