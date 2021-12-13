@@ -56,10 +56,12 @@ function displayTemperature(response) {
   let humToday = document.querySelector("#humidity-temperature-today");
   let pressureToday = Math.round(response.data.main.pressure);
   let precToday = document.querySelector("#precipitation-temperature-today");
+  let iconToday = document.querySelector("#today-icon")
   tempmaxToday.innerHTML = `${temperatureMaxToday}º${unitLetter}`;
   tempminToday.innerHTML = `${temperatureMinToday}º${unitLetter}`;
   humToday.innerHTML = `${humididtyToday}%`;
   precToday.innerHTML = `${pressureToday}mb`;
+  iconToday.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 
 
@@ -75,10 +77,15 @@ function displayTemperature(response) {
   let precTomorrow = document.querySelector(
     "#precipitation-temperature-tomorrow"
   );
+  let iconTomorrow = document.querySelector("#tomorrow-icon");
   tempmaxTomorrow.innerHTML = `${temperatureMaxTomorrow}º${unitLetter}`;
   tempminTomorrow.innerHTML = `${temperatureMinTomorrow}º${unitLetter}`;
   humTomorrow.innerHTML = `${humididtyTomorrow}%`;
   precTomorrow.innerHTML = `${pressureTomorrow}mb`;
+  iconTomorrow.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   // 2
   let temperatureMaxTwo = Math.round(response.data.main.temp_max);
@@ -89,10 +96,15 @@ function displayTemperature(response) {
   let humTwo = document.querySelector("#humidity-temperature-2");
   let pressurev = Math.round(response.data.main.pressure);
   let precTwo = document.querySelector("#precipitation-temperature-2");
+  let iconTwo = document.querySelector("#two-icon");
   tempmaxTwo.innerHTML = `${temperatureMaxTwo}º${unitLetter}`;
   tempminTwo.innerHTML = `${temperatureMinTwo}º${unitLetter}`;
   humTwo.innerHTML = `${humididty2Two}%`;
   precTwo.innerHTML = `${pressurev}mb`;
+  iconTwo.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   // 3
   let temperatureMaxThree = Math.round(response.data.main.temp_max);
@@ -103,10 +115,15 @@ function displayTemperature(response) {
   let humThree = document.querySelector("#humidity-temperature-3");
   let pressureThree = Math.round(response.data.main.pressure);
   let precThree = document.querySelector("#precipitation-temperature-3");
+  let iconThree = document.querySelector("#three-icon");
   tempmaxThree.innerHTML = `${temperatureMaxThree}º${unitLetter}`;
   tempminThree.innerHTML = `${temperatureMinThree}º${unitLetter}`;
   humThree.innerHTML = `${humididtyThree}%`;
   precThree.innerHTML = `${pressureThree}mb`;
+  iconThree.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   // 4
   let temperatureMaxFour = Math.round(response.data.main.temp_max);
@@ -117,10 +134,15 @@ function displayTemperature(response) {
   let humFour = document.querySelector("#humidity-temperature-4");
   let pressureFour = Math.round(response.data.main.pressure);
   let precFour = document.querySelector("#precipitation-temperature-4");
+  let iconFour = document.querySelector("#four-icon");
   tempmaxFour.innerHTML = `${temperatureMaxFour}º${unitLetter}`;
   tempminFour.innerHTML = `${temperatureMinFour}º${unitLetter}`;
   humFour.innerHTML = `${humididtyFour}%`;
   precFour.innerHTML = `${pressureFour}mb`;
+  iconFour.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   // 5
   let temperatureMaxFive = Math.round(response.data.main.temp_max);
@@ -131,10 +153,15 @@ function displayTemperature(response) {
   let humFive = document.querySelector("#humidity-temperature-5");
   let pressureFive = Math.round(response.data.main.pressure);
   let precFive = document.querySelector("#precipitation-temperature-5");
+  let iconFive = document.querySelector("#five-icon");
   tempmaxFive.innerHTML = `${temperatureMaxFive}º${unitLetter}`;
   tempminFive.innerHTML = `${temperatureMinFive}º${unitLetter}`;
   humFive.innerHTML = `${humididtyFive}%`;
   precFive.innerHTML = `${pressureFive}mb`;
+  iconFive.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 

@@ -1,7 +1,7 @@
 div.form {
   display: block;
   text-align: center;
-  margin-bottom: 50px;
+  line-height: 1;
 }
 .weather-app {
   max-width: 600px;
@@ -41,8 +41,7 @@ div.form {
   width: 1000px;
 }
 .today-section {
-  line-height: 30px;
-  margin-bottom: 50px;
+  line-height: 1;
 }
 .current-status {
   position: relative;
@@ -50,17 +49,20 @@ div.form {
   font-size: 100px;
   margin: 0;
   padding: 0px 0px 0px 0px;
+  line-height: 50px;
 }
 .today-section .location {
   font-weight: bold;
   position: relative;
   left: 75px;
+  margin-bottom: 20px;
 }
 .today-section .todayDate {
   font-weight: bold;
   position: relative;
   left: 150px;
   top: -20px;
+  line-height: 1;
 }
 .today-section .temperature-now-celsius {
   font-weight: bold;
@@ -69,17 +71,20 @@ div.form {
   font-size: 100px;
   margin: 0;
   padding: 0px 0px 0px 0px;
+  line-height: 1;
 }
 .today-section .temperature-now-fahrenheit {
   font-weight: bold;
   position: relative;
   left: 345px;
+  line-height: 1;
 }
 .today-section .sky-status {
   font-weight: bold;
   position: relative;
   font-size: 30px;
   left: 175px;
+  line-height: 1;
 }
 
 .yellow-icon {
@@ -142,7 +147,6 @@ div.form {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 200px;
 }
 
 .card {
@@ -169,6 +173,7 @@ div.form {
   left: 115px;
   position: relative;
   margin: 0;
+  line-height: 1;
 }
 
 img {
@@ -182,4 +187,13 @@ img {
   margin-top: 50px;
   margin-bottom: 50px;
   font-size: x-small;
+}
+
+.current-weather-icon {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: -30px;
+    line-height: 1;
 }
