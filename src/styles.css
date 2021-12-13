@@ -3,23 +3,30 @@ div.form {
   text-align: center;
   margin-bottom: 50px;
 }
-
-#current-location-text{
-  text-transform:capitalize;
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
 }
 
-#sky-status{
-  text-transform:capitalize;
+#current-location-text {
+  text-transform: capitalize;
 }
-#celsius-temp-link{
+
+#sky-status {
+  text-transform: capitalize;
+}
+#celsius-temp-link {
   text-decoration: none;
   color: black;
 }
-#fahrenheit-temp-link{
+#fahrenheit-temp-link {
   text-decoration: none;
   color: black;
 }
-#between-text{
+#between-text {
   font-size: 20px;
   top: -50px;
 }
@@ -33,11 +40,11 @@ div.form {
   text-align: center;
   width: 1000px;
 }
-.today-section{
-   line-height : 30px;
-   margin-bottom: 50px;
+.today-section {
+  line-height: 30px;
+  margin-bottom: 50px;
 }
-.current-status{
+.current-status {
   position: relative;
   left: 300px;
   font-size: 100px;
@@ -49,7 +56,7 @@ div.form {
   position: relative;
   left: 75px;
 }
-.today-section .todayDate{
+.today-section .todayDate {
   font-weight: bold;
   position: relative;
   left: 150px;
@@ -81,27 +88,31 @@ div.form {
     rgb(255, 219, 47) 11.2%,
     rgb(244, 253, 0) 100.2%
   );
-   font-size: 50px;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-  display: inline-block
-}
-
-.blue-icon{
   font-size: 50px;
-  background: radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%);
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  display: inline-block
+  display: inline-block;
 }
 
-.grey-icon{
+.blue-icon {
+  font-size: 50px;
+  background: radial-gradient(
+    circle at 12.3% 19.3%,
+    rgb(85, 88, 218) 0%,
+    rgb(95, 209, 249) 100.2%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.grey-icon {
   font-size: 50px;
   background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   background-clip: text;
@@ -109,61 +120,64 @@ div.form {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  display: inline-block
+  display: inline-block;
 }
-.location-icon{
+.location-icon {
   font-size: 20px;
-  background: linear-gradient(109.6deg, rgb(0, 0, 0) 11.2%, rgb(247, 30, 30) 100.3%);
+  background: linear-gradient(
+    109.6deg,
+    rgb(0, 0, 0) 11.2%,
+    rgb(247, 30, 30) 100.3%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  display: inline-block
+  display: inline-block;
 }
 
-.centered-row{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 200px;
-    
+.centered-row {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
 }
 
 .card {
-    opacity: 0.6;
+  opacity: 0.6;
 }
-.card:hover{
-    opacity: 1;
-}
-
-.forecast-day{
-    font-family: 'Fruktur', cursive;
-    font-family: 'Irish Grover', cursive;
-    font-family: 'Libre Baskerville', serif;
-    font-size: 20px;
+.card:hover {
+  opacity: 1;
 }
 
-.card-text{
-    text-align: justify;
+.forecast-day {
+  font-family: "Fruktur", cursive;
+  font-family: "Irish Grover", cursive;
+  font-family: "Libre Baskerville", serif;
+  font-size: 20px;
 }
 
-.today-section-info{
-    text-align: justify;
-    line-height : 30px;
-    left: 115px;
-    position: relative;
-    margin:0;
+.card-text {
+  text-align: justify;
+}
+
+.today-section-info {
+  text-align: justify;
+  line-height: 30px;
+  left: 115px;
+  position: relative;
+  margin: 0;
 }
 
 img {
-  width:500px;
+  width: 500px;
   display: block;
 }
 
-#open-source-link{
-   display: block;
+#open-source-link {
+  display: block;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
