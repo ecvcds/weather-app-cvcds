@@ -9,13 +9,19 @@ div.form {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  background-color:rgba(255,255,255, 0.75);
+  
 }
-
+#forecast-card {
+  margin: 30px auto;
+  padding: 20px;
+}
 #current-location-text {
   text-transform: capitalize;
 }
 
 #sky-status {
+  top:-10px;
   text-transform: capitalize;
 }
 #celsius-temp-link {
@@ -41,7 +47,7 @@ div.form {
   width: 1000px;
 }
 .today-section {
-  line-height: 1;
+  line-height: 2;
 }
 .current-status {
   position: relative;
@@ -54,14 +60,14 @@ div.form {
 .today-section .location {
   font-weight: bold;
   position: relative;
-  left: 75px;
+  left: 125px;
   margin-bottom: 20px;
+  font-size: large
 }
 .today-section .todayDate {
   font-weight: bold;
   position: relative;
-  left: 150px;
-  top: -20px;
+  left: 125px;
   line-height: 1;
 }
 .today-section .temperature-now-celsius {
@@ -197,3 +203,8 @@ img {
     top: -30px;
     line-height: 1;
 }
+
+body{
+  background-image: url("https://i.pinimg.com/originals/e3/13/a0/e313a08e5b0455b1d2b5f345b2cdb97f.jpg");
+}
+

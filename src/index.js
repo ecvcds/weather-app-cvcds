@@ -10,6 +10,7 @@ function updateClock() {
     "Friday",
     "Saturday",
   ];
+  let orderWeek = [0, 1, 2, 3, 4, 5, 6];
   let day = now.getDay();
   let hour = now.getHours();
   hour = ("0" + hour).slice(-2);
@@ -21,7 +22,23 @@ function updateClock() {
   // call this function again in 1000ms
   setTimeout(updateClock, 1000);
   // changing background according time of the day
+
   
+}
+
+function formatDay(timestamp){
+  let date = new Date(timestamp*1000);
+  let day = date.getDay();
+  let week = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return week[day];
 }
 
 function citySearch(event) {
@@ -68,7 +85,6 @@ function displayTemperatureForecast(responseForecast) {
     `http://openweathermap.org/img/wn/${forecast[1].weather[0].icon}@2x.png`
   );
 
-
   // 2
   let temperatureMaxTwo = Math.round(forecast[2].temp.max);
   let tempmaxTwo = document.querySelector("#max-temperature-2");
@@ -83,7 +99,7 @@ function displayTemperatureForecast(responseForecast) {
   tempminTwo.innerHTML = `${temperatureMinTwo}º${unitLetter}`;
   humTwo.innerHTML = `${humididty2Two}%`;
   precTwo.innerHTML = `${pressurev}mb`;
-  
+
   iconTwo.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${forecast[2].weather[0].icon}@2x.png`
@@ -103,12 +119,12 @@ function displayTemperatureForecast(responseForecast) {
   tempminThree.innerHTML = `${temperatureMinThree}º${unitLetter}`;
   humThree.innerHTML = `${humididtyThree}%`;
   precThree.innerHTML = `${pressureThree}mb`;
-  
+
   iconThree.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${forecast[3].weather[0].icon}@2x.png`
   );
- 
+
   // 4
   let temperatureMaxFour = Math.round(forecast[4].temp.max);
   let tempmaxFour = document.querySelector("#max-temperature-4");
@@ -123,12 +139,12 @@ function displayTemperatureForecast(responseForecast) {
   tempminFour.innerHTML = `${temperatureMinFour}º${unitLetter}`;
   humFour.innerHTML = `${humididtyFour}%`;
   precFour.innerHTML = `${pressureFour}mb`;
-  
+
   iconFour.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${forecast[4].weather[0].icon}@2x.png`
   );
-  
+
   // 5
   let temperatureMaxFive = Math.round(forecast[5].temp.max);
   let tempmaxFive = document.querySelector("#max-temperature-5");
@@ -143,12 +159,22 @@ function displayTemperatureForecast(responseForecast) {
   tempminFive.innerHTML = `${temperatureMinFive}º${unitLetter}`;
   humFive.innerHTML = `${humididtyFive}%`;
   precFive.innerHTML = `${pressureFive}mb`;
-  
+
   iconFive.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${forecast[5].weather[0].icon}@2x.png`
   );
   
+  let dayOne = document.querySelector("#day-1");
+  dayOne.innerHTML = formatDay(forecast[1].dt);
+  let dayTwo = document.querySelector("#day-2");
+  dayTwo.innerHTML = formatDay(forecast[2].dt);
+  let dayThree = document.querySelector("#day-3");
+  dayThree.innerHTML = formatDay(forecast[3].dt);
+  let dayFour = document.querySelector("#day-4");
+  dayFour.innerHTML = formatDay(forecast[4].dt);
+  let dayFive = document.querySelector("#day-5");
+  dayFive.innerHTML = formatDay(forecast[5].dt);
 }
 
 function displayTemperature(response) {
@@ -213,7 +239,7 @@ function handlePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let currentLocation = document.querySelector("#current-location-text");
-  currentLocation.innerHTML = `LAT: ${latitude}, LONG: ${longitude}`;
+  currentLocation.innerHTML = `${latitude},${longitude}`;
 
   let apiKey = "68a8f0f7438ccfcb603f20f4f6a207e7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
