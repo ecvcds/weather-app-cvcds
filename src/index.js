@@ -32,8 +32,109 @@ function citySearch(event) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
+function displayTemperatureForecast(responseForecast){
+  // tomorrow
+  let temperatureMaxTomorrow = Math.round(responseForecast.data.main.temp_max);
+  let tempmaxTomorrow = document.querySelector("#max-temperature-tomorrow");
+  let temperatureMinTomorrow = Math.round(responseForecast.data.main.temp_min);
+  let tempminTomorrow = document.querySelector("#min-temperature-tomorrow");
+  let humididtyTomorrow = Math.round(responseForecast.data.main.humidity);
+  let humTomorrow = document.querySelector("#humidity-temperature-tomorrow");
+  let pressureTomorrow = Math.round(responseForecast.data.main.pressure);
+  let precTomorrow = document.querySelector(
+    "#precipitation-temperature-tomorrow"
+  );
+  let iconTomorrow = document.querySelector("#tomorrow-icon");
+  tempmaxTomorrow.innerHTML = `${temperatureMaxTomorrow}º${unitLetter}`;
+  tempminTomorrow.innerHTML = `${temperatureMinTomorrow}º${unitLetter}`;
+  humTomorrow.innerHTML = `${humididtyTomorrow}%`;
+  precTomorrow.innerHTML = `${pressureTomorrow}mb`;
+  iconTomorrow.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${responseForecast.data.weather[0].icon}@2x.png`
+  );
+
+  // 2
+  let temperatureMaxTwo = Math.round(responseForecast.data.main.temp_max);
+  let tempmaxTwo = document.querySelector("#max-temperature-2");
+  let temperatureMinTwo = Math.round(responseForecast.data.main.temp_min);
+  let tempminTwo = document.querySelector("#min-temperature-2");
+  let humididty2Two = Math.round(responseForecast.data.main.humidity);
+  let humTwo = document.querySelector("#humidity-temperature-2");
+  let pressurev = Math.round(responseForecast.data.main.pressure);
+  let precTwo = document.querySelector("#precipitation-temperature-2");
+  let iconTwo = document.querySelector("#two-icon");
+  tempmaxTwo.innerHTML = `${temperatureMaxTwo}º${unitLetter}`;
+  tempminTwo.innerHTML = `${temperatureMinTwo}º${unitLetter}`;
+  humTwo.innerHTML = `${humididty2Two}%`;
+  precTwo.innerHTML = `${pressurev}mb`;
+  iconTwo.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${responseForecast.data.weather[0].icon}@2x.png`
+  );
+
+  // 3
+  let temperatureMaxThree = Math.round(responseForecast.data.main.temp_max);
+  let tempmaxThree = document.querySelector("#max-temperature-3");
+  let temperatureMinThree = Math.round(responseForecast.data.main.temp_min);
+  let tempminThree = document.querySelector("#min-temperature-3");
+  let humididtyThree = Math.round(responseForecast.data.main.humidity);
+  let humThree = document.querySelector("#humidity-temperature-3");
+  let pressureThree = Math.round(responseForecast.data.main.pressure);
+  let precThree = document.querySelector("#precipitation-temperature-3");
+  let iconThree = document.querySelector("#three-icon");
+  tempmaxThree.innerHTML = `${temperatureMaxThree}º${unitLetter}`;
+  tempminThree.innerHTML = `${temperatureMinThree}º${unitLetter}`;
+  humThree.innerHTML = `${humididtyThree}%`;
+  precThree.innerHTML = `${pressureThree}mb`;
+  iconThree.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${responseForecast.data.weather[0].icon}@2x.png`
+  );
+
+  // 4
+  let temperatureMaxFour = Math.round(responseForecast.data.main.temp_max);
+  let tempmaxFour = document.querySelector("#max-temperature-4");
+  let temperatureMinFour = Math.round(responseForecast.data.main.temp_min);
+  let tempminFour = document.querySelector("#min-temperature-4");
+  let humididtyFour = Math.round(responseForecast.data.main.humidity);
+  let humFour = document.querySelector("#humidity-temperature-4");
+  let pressureFour = Math.round(responseForecast.data.main.pressure);
+  let precFour = document.querySelector("#precipitation-temperature-4");
+  let iconFour = document.querySelector("#four-icon");
+  tempmaxFour.innerHTML = `${temperatureMaxFour}º${unitLetter}`;
+  tempminFour.innerHTML = `${temperatureMinFour}º${unitLetter}`;
+  humFour.innerHTML = `${humididtyFour}%`;
+  precFour.innerHTML = `${pressureFour}mb`;
+  iconFour.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${responseForecast.data.weather[0].icon}@2x.png`
+  );
+
+  // 5
+  let temperatureMaxFive = Math.round(responseForecast.data.main.temp_max);
+  let tempmaxFive = document.querySelector("#max-temperature-5");
+  let temperatureMinFive = Math.round(responseForecast.data.main.temp_min);
+  let tempminFive = document.querySelector("#min-temperature-5");
+  let humididtyFive = Math.round(responseForecast.data.main.humidity);
+  let humFive = document.querySelector("#humidity-temperature-5");
+  let pressureFive = Math.round(responseForecast.data.main.pressure);
+  let precFive = document.querySelector("#precipitation-temperature-5");
+  let iconFive = document.querySelector("#five-icon");
+  tempmaxFive.innerHTML = `${temperatureMaxFive}º${unitLetter}`;
+  tempminFive.innerHTML = `${temperatureMinFive}º${unitLetter}`;
+  humFive.innerHTML = `${humididtyFive}%`;
+  precFive.innerHTML = `${pressureFive}mb`;
+  iconFive.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${responseForecast.data.weather[0].icon}@2x.png`
+  );
+}
+
+
 function displayTemperature(response) {
   console.log(response.data.weather);
+  
   let unitLetter = "F";
   if (apiUnits == "metric") {
     unitLetter = "C";
@@ -63,105 +164,12 @@ function displayTemperature(response) {
   precToday.innerHTML = `${pressureToday}mb`;
   iconToday.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
+  let latForecast = response.data.coord.lat
+  let lonForecast = response.data.coord.lon;
 
+  let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${latForecast}&lon=${lonForecast}&dt={time}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayTemperatureForecast);
 
-
-  // tomorrow
-  let temperatureMaxTomorrow = Math.round(response.data.main.temp_max);
-  let tempmaxTomorrow = document.querySelector("#max-temperature-tomorrow");
-  let temperatureMinTomorrow = Math.round(response.data.main.temp_min);
-  let tempminTomorrow = document.querySelector("#min-temperature-tomorrow");
-  let humididtyTomorrow = Math.round(response.data.main.humidity);
-  let humTomorrow = document.querySelector("#humidity-temperature-tomorrow");
-  let pressureTomorrow = Math.round(response.data.main.pressure);
-  let precTomorrow = document.querySelector(
-    "#precipitation-temperature-tomorrow"
-  );
-  let iconTomorrow = document.querySelector("#tomorrow-icon");
-  tempmaxTomorrow.innerHTML = `${temperatureMaxTomorrow}º${unitLetter}`;
-  tempminTomorrow.innerHTML = `${temperatureMinTomorrow}º${unitLetter}`;
-  humTomorrow.innerHTML = `${humididtyTomorrow}%`;
-  precTomorrow.innerHTML = `${pressureTomorrow}mb`;
-  iconTomorrow.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-
-  // 2
-  let temperatureMaxTwo = Math.round(response.data.main.temp_max);
-  let tempmaxTwo = document.querySelector("#max-temperature-2");
-  let temperatureMinTwo = Math.round(response.data.main.temp_min);
-  let tempminTwo = document.querySelector("#min-temperature-2");
-  let humididty2Two = Math.round(response.data.main.humidity);
-  let humTwo = document.querySelector("#humidity-temperature-2");
-  let pressurev = Math.round(response.data.main.pressure);
-  let precTwo = document.querySelector("#precipitation-temperature-2");
-  let iconTwo = document.querySelector("#two-icon");
-  tempmaxTwo.innerHTML = `${temperatureMaxTwo}º${unitLetter}`;
-  tempminTwo.innerHTML = `${temperatureMinTwo}º${unitLetter}`;
-  humTwo.innerHTML = `${humididty2Two}%`;
-  precTwo.innerHTML = `${pressurev}mb`;
-  iconTwo.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-
-  // 3
-  let temperatureMaxThree = Math.round(response.data.main.temp_max);
-  let tempmaxThree = document.querySelector("#max-temperature-3");
-  let temperatureMinThree = Math.round(response.data.main.temp_min);
-  let tempminThree = document.querySelector("#min-temperature-3");
-  let humididtyThree = Math.round(response.data.main.humidity);
-  let humThree = document.querySelector("#humidity-temperature-3");
-  let pressureThree = Math.round(response.data.main.pressure);
-  let precThree = document.querySelector("#precipitation-temperature-3");
-  let iconThree = document.querySelector("#three-icon");
-  tempmaxThree.innerHTML = `${temperatureMaxThree}º${unitLetter}`;
-  tempminThree.innerHTML = `${temperatureMinThree}º${unitLetter}`;
-  humThree.innerHTML = `${humididtyThree}%`;
-  precThree.innerHTML = `${pressureThree}mb`;
-  iconThree.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-
-  // 4
-  let temperatureMaxFour = Math.round(response.data.main.temp_max);
-  let tempmaxFour = document.querySelector("#max-temperature-4");
-  let temperatureMinFour = Math.round(response.data.main.temp_min);
-  let tempminFour = document.querySelector("#min-temperature-4");
-  let humididtyFour = Math.round(response.data.main.humidity);
-  let humFour = document.querySelector("#humidity-temperature-4");
-  let pressureFour = Math.round(response.data.main.pressure);
-  let precFour = document.querySelector("#precipitation-temperature-4");
-  let iconFour = document.querySelector("#four-icon");
-  tempmaxFour.innerHTML = `${temperatureMaxFour}º${unitLetter}`;
-  tempminFour.innerHTML = `${temperatureMinFour}º${unitLetter}`;
-  humFour.innerHTML = `${humididtyFour}%`;
-  precFour.innerHTML = `${pressureFour}mb`;
-  iconFour.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-
-  // 5
-  let temperatureMaxFive = Math.round(response.data.main.temp_max);
-  let tempmaxFive = document.querySelector("#max-temperature-5");
-  let temperatureMinFive = Math.round(response.data.main.temp_min);
-  let tempminFive = document.querySelector("#min-temperature-5");
-  let humididtyFive = Math.round(response.data.main.humidity);
-  let humFive = document.querySelector("#humidity-temperature-5");
-  let pressureFive = Math.round(response.data.main.pressure);
-  let precFive = document.querySelector("#precipitation-temperature-5");
-  let iconFive = document.querySelector("#five-icon");
-  tempmaxFive.innerHTML = `${temperatureMaxFive}º${unitLetter}`;
-  tempminFive.innerHTML = `${temperatureMinFive}º${unitLetter}`;
-  humFive.innerHTML = `${humididtyFive}%`;
-  precFive.innerHTML = `${pressureFive}mb`;
-  iconFive.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
 }
 
 
@@ -185,7 +193,7 @@ function handlePosition(position) {
   currentLocation.innerHTML = `LAT: ${latitude}, LONG: ${longitude}` ;
 
 
-  let apiKey = "68a8f0f7438ccfcb603f20f4f6a207e7";
+  let apiKey = "9e00737dc44991a88125ba25e7ef0c8e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -197,7 +205,7 @@ function currentLocationWeather(event){
 }
 
 
-let apiKey = "68a8f0f7438ccfcb603f20f4f6a207e7";
+let apiKey = "9e00737dc44991a88125ba25e7ef0c8e";
 let city = "Porto";
 let apiUnits = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${apiUnits}`;
